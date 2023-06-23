@@ -18,6 +18,17 @@
             "mainClass": "com.example.demo.SpringBootSecurityJwtApplication",
             "projectName": "demo_rest_2205",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=49432 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=demo_rest_2205"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<demo_rest_2205>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.demo.DemoApplication",
+            "projectName": "demo_rest_2205",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]

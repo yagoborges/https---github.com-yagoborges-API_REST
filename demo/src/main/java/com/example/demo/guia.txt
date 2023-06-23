@@ -1,0 +1,16 @@
+1) Criar os modelos dentro da pasta model
+    - Aluno
+    - Professor
+    - Disciplina
+    - Turma
+    - TurmaXAluno (OneToMany(fetch = FetchType.LAZY))
+        https://docs.jboss.org/hibernate/jpa/2.1/api/javax/persistence/OneToMany.html
+
+  2) Criar as classes de repositório (fazem o contato com o banco e querys personalizadas)
+    public interface RepositorioNOMEDACLASSE extends JpaRepository<NOMEDACLASSE, Long> 
+
+3) Criar as classes NOMEDACLASSERest (Ou controller)
+    Mapeia os métodos REST API com as classes do repositórios
+
+// só atualiza o banco com o application properties caso vá colocar na nuvem
+    Para executar, utilizar classe JWT
