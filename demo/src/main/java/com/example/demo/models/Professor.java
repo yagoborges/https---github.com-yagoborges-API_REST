@@ -11,7 +11,7 @@ public class Professor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cod_prof;
+    private Long cod_prof;
 
     @NotBlank
     @Size(max = 50)
@@ -30,6 +30,10 @@ public class Professor {
 
     public void setNome_prof(String nome_prof) {
         this.nome_prof = nome_prof;
+    }
+
+    public Long getCod_prof() {
+        return cod_prof;
     }
     
 }

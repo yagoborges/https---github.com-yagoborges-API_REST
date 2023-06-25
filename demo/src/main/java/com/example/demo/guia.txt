@@ -9,6 +9,11 @@
   2) Criar as classes de repositório (fazem o contato com o banco e querys personalizadas)
     public interface RepositorioNOMEDACLASSE extends JpaRepository<NOMEDACLASSE, Long> 
 
+    Aluno -> Buscar todos, Inserir, Update, Deletar
+    Professor -> Buscar todos, Inserir, Update, Deletar
+    Disciplina -> Buscar todos, Inserir, Update, Deletar
+    Turma -> Buscar todos, Inserir, Update, Deletar
+
 3) Criar as classes NOMEDACLASSERest (Ou controller)
     Mapeia os métodos REST API com as classes do repositórios
 

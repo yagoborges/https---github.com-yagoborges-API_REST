@@ -11,7 +11,7 @@ public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer matricula;
+    private Long matricula;
 
     @NotBlank
     @Size(max = 50)
@@ -43,6 +43,10 @@ public class Aluno {
 
     public void setCurso(String curso) {
         this.curso = curso;
+    }
+
+    public Long getMatricula() {
+        return matricula;
     }    
     
 }
