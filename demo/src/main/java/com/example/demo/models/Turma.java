@@ -1,5 +1,8 @@
 package com.example.demo.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -20,6 +23,9 @@ public class Turma {
     @NotBlank
     @Size(max = 50)
     private String anosem;
+
+    @OneToMany
+    private List<TurmaXAluno> alunosPorTurma = new ArrayList<>();
 
     public Turma() {
     }
@@ -49,5 +55,8 @@ public class Turma {
         return cod_turma;
     }
 
-
+    public void add(TurmaXAluno ta) {
+      ta.setFk_txa_cod_turma(this);
+      this.alunosPorTurma.add(ta);
+   }
 }

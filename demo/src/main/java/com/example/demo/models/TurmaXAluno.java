@@ -1,23 +1,27 @@
 package com.example.demo.models;
 
+import java.io.Serializable;
+
 import jakarta.persistence.*;
 
 
 @Entity
 @Table(name = "turma_x_aluno")
-public class TurmaXAluno {
+public class TurmaXAluno implements Serializable{
     
     @EmbeddedId
-    private TurmaXAlunoId id;
+    private TurmaXAlunoId id = new TurmaXAlunoId();
     
+    //@MapsId("consultantId")
+   //@JoinColumn(insertable = false, updatable = false)
     @ManyToOne
     @MapsId("matricula")
-    //@JoinColumn(name = "matricula")
+    //@JoinColumn(insertable = false, updatable = false)
     private Aluno fk_txa_matricula;
 
     @ManyToOne
     @MapsId("cod_turma")
-    //@JoinColumn(name = "cod_turma")
+    //@JoinColumn(insertable = false, updatable = false)
     private Turma fk_txa_cod_turma;
 
     public TurmaXAluno(){

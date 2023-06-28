@@ -33,8 +33,9 @@ public class TurmaXAlunoController {
 
     @GetMapping("/buscar/{id}")
     public ResponseEntity<Object> buscarPorId(@PathVariable Long id) {
-        Optional<TurmaXAluno> turmaXAluno = repository.findById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(turmaXAluno.get());
+        //Optional<TurmaXAluno> turmaXAluno = repository.findById(id);
+       //return ResponseEntity.status(HttpStatus.OK).body(turmaXAluno.get());
+       return null;
     }
 
     @PostMapping
@@ -51,8 +52,13 @@ public class TurmaXAlunoController {
 
     @DeleteMapping("/{id}")
     public void excluir(@PathVariable Long id) {
-        repository.deleteById(id);
+        //repository.deleteById(id);
     }
 
+    @GetMapping("/buscarT/{id}")
+    public ResponseEntity<Object> buscarPorIdTurmaAlunoID(@PathVariable Long id) {
+        List<TurmaXAluno> turmaXAlunos = repository.findAll();
+        return ResponseEntity.ok(turmaXAlunos.get(0));
+    }
     
 }
